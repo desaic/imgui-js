@@ -1,23 +1,8 @@
 # [imgui-js](https://github.com/flyover/imgui-js)
 JavaScript bindings for [Dear ImGui](https://github.com/ocornut/imgui) using [Emscripten](https://github.com/kripken/emscripten) and [TypeScript](https://github.com/Microsoft/TypeScript)
 
-## Example
-[ImGui JavaScript+WebGL example](https://flyover.github.io/imgui-js/example/)
-
-The original Dear ImGui demo code from [imgui_demo.cpp](https://github.com/ocornut/imgui/blob/master/imgui_demo.cpp) has been ported to [imgui_demo.ts](example/src/imgui_demo.ts).  Also, the Memory Editor from the [imgui_club](https://github.com/ocornut/imgui_club) project ([imgui_memory_editor.h](https://github.com/ocornut/imgui_club/blob/master/imgui_memory_editor/imgui_memory_editor.h)) has been ported to [imgui_memory_editor.ts](example/src/imgui_memory_editor.ts) and added to the demo for browsing the Emscripten memory space.
-
-[ImGui JavaScript Sandbox](https://codepen.io/flyovergames/pen/xYPBaj)
-
-A [CodePen](https://codepen.io) using the [Ace](https://ace.c9.io) editor to live-edit a window.
-
-[ImGui JavaScript+Three.js example](https://codepen.io/flyovergames/pen/ejXjXj)
-
-A [CodePen](https://codepen.io) using Dear ImGui with [Three.js](https://threejs.org).
-
-## Support
-If you find this useful, please consider donating to this and the [Dear ImGui](https://github.com/ocornut/imgui) project.  I can also invoice for private support, custom development, etc.
-
-[![PayPal donate button](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=H9KUEZTZHHTXQ&lc=US&item_name=imgui-js&currency_code=USD&bn=PP-DonationsBF:btn_donate_SM.gif:NonHosted "Donate to this project using Paypal")
+Removed dependencies such as "system". Removed example. it's broken idgaf.
+Compiles to es module instead of umd. 
 
 ## Notes
 All functions in the C++ ImGui namespace are exported at the top level of the module.
