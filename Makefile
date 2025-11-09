@@ -31,7 +31,7 @@ BIND_IMGUI_SOURCE_D_TS = src/bind-imgui.d.ts
 BIND_IMGUI_OUTPUT_D_TS = build/bind-imgui.d.ts
 BIND_IMGUI_SOURCE_CXX = src/bind-imgui.cpp
 BIND_IMGUI_OUTPUT_O = build/bind-imgui.o
-BIND_IMGUI_OUTPUT_JS = build/bind-imgui.js
+BIND_IMGUI_OUTPUT_JS = build/bind-imgui.mjs
 
 # debug flags
 # FLAGS += -g4
@@ -63,13 +63,14 @@ BIND_FLAGS += -s SINGLE_FILE=1
 # BIND_FLAGS += -s TOTAL_MEMORY=4194304
 # BIND_FLAGS += -s ALLOW_MEMORY_GROWTH=1
 BIND_FLAGS += -s EMBIND_STD_STRING_IS_UTF8=1
+BIND_FLAGS += -s EXPORT_ES6=1
 
-build-bind-imgui: build/emscripten.d.ts build/bind-imgui.d.ts build/bind-imgui.js
+build-bind-imgui: build/emscripten.d.ts build/bind-imgui.d.ts build/bind-imgui.mjs
 
 clean-bind-imgui:
 	rm -f $(IMGUI_OUTPUT_O)
 	rm -f $(BIND_IMGUI_OUTPUT_O)
-	rm -f build/bind-imgui.js build/bind-imgui.js.*
+	rm -f build/bind-imgui.mjs build/bind-imgui.mjs.*
 	rm -f build/bind-imgui.wasm build/bind-imgui.wasm.*
 
 build/%.o: %.cpp $(IMGUI_SOURCE_HXX)
@@ -88,7 +89,7 @@ build/bind-imgui.o: src/bind-imgui.cpp $(IMGUI_SOURCE_HXX)
 	mkdir -p ${@D}
 	emcc $(FLAGS) -I $(IMGUI_PATH) -c $< -o $@
 
-build/bind-imgui.js: $(IMGUI_OUTPUT_O) $(BIND_IMGUI_OUTPUT_O)
+build/bind-imgui.mjs: $(IMGUI_OUTPUT_O) $(BIND_IMGUI_OUTPUT_O)
 	mkdir -p ${@D}
 	emcc $(FLAGS) $(BIND_FLAGS) -I $(IMGUI_PATH) --bind $^ -o $@
 

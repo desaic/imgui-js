@@ -38,8 +38,8 @@ System.register(["imgui-js", "./imgui_impl.js", "./imgui_demo.js", "./imgui_memo
         });
     }
     exports_1("default", main);
-    function AddFontFromFileTTF(url, size_pixels, font_cfg = null, glyph_ranges = null) {
-        return __awaiter(this, void 0, void 0, function* () {
+    function AddFontFromFileTTF(url_1, size_pixels_1) {
+        return __awaiter(this, arguments, void 0, function* (url, size_pixels, font_cfg = null, glyph_ranges = null) {
             font_cfg = font_cfg || new ImGui.FontConfig();
             font_cfg.Name = font_cfg.Name || `${url.split(/[\\\/]/).pop()}, ${size_pixels.toFixed(0)}px`;
             return ImGui.GetIO().Fonts.AddFontFromMemoryTTF(yield LoadArrayBuffer(url), size_pixels, font_cfg, glyph_ranges);

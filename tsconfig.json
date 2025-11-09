@@ -1,14 +1,29 @@
 {
   "compilerOptions": {
-    "target": "ES2016",
-    "module": "system",
-    "strict": true,
-    "outDir": "build",
-    "sourceMap": true,
-    "declaration": true,
-    "baseUrl": ".",
-    "paths": {
-      "bind-imgui": [ "build/bind-imgui" ],
+    "target": "ES2022",
+    "module": "ESNext",
+    "lib": [
+      "ES2022",
+      "DOM"
+    ],
+    /* Strictness & Reliability */
+    "strict": true, /* Enable all strict type-checking options. (Requested) */
+    "isolatedModules": true, /* Ensures code works correctly with transpilers like esbuild/Babel. Crucial for Vite. */
+    "esModuleInterop": true, /* Allows CJS modules to be imported via a default import. */
+    "skipLibCheck": true, /* Skip type checking of declaration files. Speeds up compilation. */
+    /* Module Resolution */
+    "moduleResolution": "bundler", 
+    "resolveJsonModule": true, /* Allows importing modules with a '.json' extension. */
+    /* Output Options */
+    "outDir": "build", /* Specify an output folder for all emitted files. (Requested) */
+    "sourceMap": true, /* Create source map files for emitted JavaScript files. (Requested) */
+    "declaration": true, /* Generate corresponding '.d.ts' declaration file. (Requested) */
+    /* Path Mapping */
+    "baseUrl": ".", /* Specify the base directory to resolve non-relative module names. (Requested) */
+    "paths": { /* Specify a series of entries that re-map imports to lookup locations. (Requested) */
+      "bind-imgui": [
+        "build/bind-imgui"
+      ]
     }
   },
   "files": [
